@@ -33,7 +33,7 @@ export default function SignUp() {
                 if (user) {
                     axiosPublic.post('/user', userInfo).then(res => {
                         console.log(res.data);
-                        if (insertedId) {
+                        if (res.data.insertedId) {
                             Swal.fire({
                                 position: "top-end",
                                 icon: "success",
