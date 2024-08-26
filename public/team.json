@@ -1,0 +1,82 @@
+[
+    {
+        "id": "1",
+        "name": "Sophia Lee",
+        "email": "sophia.lee@example.com",
+        "img": "https://cdn.prod.website-files.com/6132838810ceebe08d96644a/65787fff2991b3e92cf56fb0_thumb_120x120_27dbf6178d8d-IMG_0918__2_.jpeg",
+        "expertise": "Hair Stylist",
+        "experience": "5 years"
+    },
+    {
+        "id": "2",
+        "name": "Ava Martinez",
+        "email": "ava.martinez@example.com",
+        "img": "https://cdn.prod.website-files.com/6132838810ceebe08d96644a/65e73eea4a25562f601c31cc_thumb_120x120_Armaghan-web.png",
+        "expertise": "Makeup Artist",
+        "experience": "8 years"
+    },
+    {
+        "id": "3",
+        "name": "Olivia Brown",
+        "email": "olivia.brown@example.com",
+        "img": "https://cdn.prod.website-files.com/6132838810ceebe08d96644a/65e73e721243533a38332093_thumb_120x120_Alisa_Briceno_Ramirez-web.png",
+        "expertise": "Nail Technician",
+        "experience": "3 years"
+    },
+    {
+        "id": "4",
+        "name": "Emma Wilson",
+        "email": "emma.wilson@example.com",
+        "img": "https://cdn.prod.website-files.com/6132838810ceebe08d96644a/65e73eadb7d0f106319b50ec_thumb_120x120_Falicia_Rochelle_Stock-web.png",
+        "expertise": "Skin Care Specialist",
+        "experience": "6 years"
+    },
+    {
+        "id": "5",
+        "name": "Mia Johnson",
+        "email": "mia.johnson@example.com",
+        "img": "https://cdn.prod.website-files.com/6132838810ceebe08d96644a/65e73f0618527ecea8a3bc58_thumb_120x120_Elizabeth_Moerman-web.png",
+        "expertise": "Massage Therapist",
+        "experience": "7 years"
+    },
+    {
+        "id": "6",
+        "name": "Charlotte Garcia",
+        "email": "charlotte.garcia@example.com",
+        "img": "https://cdn.prod.website-files.com/6132838810ceebe08d96644a/65e73e59dafd3734cfef66a1_thumb_120x120_Destiney_Hightower-web.png",
+        "expertise": "Hair Stylist",
+        "experience": "4 years"
+    },
+    {
+        "id": "7",
+        "name": "Amelia Rodriguez",
+        "email": "amelia.rodriguez@example.com",
+        "img": "https://cdn.prod.website-files.com/6132838810ceebe08d96644a/65e73e0a16a7c4d523a862b4_thumb_120x120_Tiffany_Shilling-web.png",
+        "expertise": "Makeup Artist",
+        "experience": "5 years"
+    },
+    {
+        "id": "8",
+        "name": "Isabella Hernandez",
+        "email": "isabella.hernandez@example.com",
+        "img": "https://cdn.prod.website-files.com/6132838810ceebe08d96644a/65e73e0a16a7c4d523a862b4_thumb_120x120_Tiffany_Shilling-web.png",
+        "expertise": "Nail Technician",
+        "experience": "2 years"
+    },
+    {
+        "id": "9",
+        "name": "Emily Martinez",
+        "email": "emily.martinez@example.com",
+        "img": "https://cdn.prod.website-files.com/6132838810ceebe08d96644a/65e73e0a16a7c4d523a862b4_thumb_120x120_Tiffany_Shilling-web.png",
+        "expertise": "Skin Care Specialist",
+        "experience": "4 years"
+    },
+    {
+        "id": "10",
+        "name": "Sofia Gonzalez",
+        "email": "sofia.gonzalez@example.com",
+        "img": "https://cdn.prod.website-files.com/6132838810ceebe08d96644a/65e73e59dafd3734cfef66a1_thumb_120x120_Destiney_Hightower-web.png",
+        "expertise": "Massage Therapist",
+        "experience": "9 years"
+    }
+]

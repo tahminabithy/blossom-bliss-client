@@ -12,28 +12,26 @@ export default function GmailBtn() {
     const handleGmailLogin = () => {
         gmailLogin().then((result) => {
             const user = result.user;
-            const namesPart = user?.displayName.split(" ")
+            // const namesPart = user?.displayName.split(" ")
             const userInfo = {
                 email: user.email,
-                firstName: namesPart[0],
-                lastName: namesPart[1]
+                name: user.displayName
+                // firstName: namesPart[0],
+                // lastName: namesPart[1]
             }
             console.log(userInfo);
 
             if (user) {
                 axiosPublic.post('/user', userInfo).then(res => {
                     console.log(res.data);
-                    if (res.data.insertedId) {
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: "Logged in successfully",
-                            showConfirmButton: false,
-                            timer: 1500
-                        });
-                        navigate('/')
-                    }
-
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Logged in successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    navigate('/')
                 })
             }
 

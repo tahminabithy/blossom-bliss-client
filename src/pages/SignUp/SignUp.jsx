@@ -27,8 +27,8 @@ export default function SignUp() {
                 console.log(user);
                 const userInfo = {
                     email: data.email,
-                    firstName: data.firstName,
-                    lastName: data.lastName
+                    name: data.firstName + ' ' + data.lastName,
+
                 }
                 if (user) {
                     axiosPublic.post('/user', userInfo).then(res => {

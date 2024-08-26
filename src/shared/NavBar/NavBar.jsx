@@ -3,13 +3,16 @@ import img from "../../assets/icons/mainLogo.png"
 import { Link, useNavigate } from 'react-router-dom'
 import CommonBtn from '../../components/CommonBtn/CommonBtn'
 import { authContext } from '../../context/AuthProvider'
+import useUser from '../../hooks/useUser'
 export default function NavBar() {
     const { user, logOut } = useContext(authContext);
+    const [dbUser] = useUser();
     const navigate = useNavigate();
     const handleLogout = () => {
         logOut().then(() => {
             console.log('logged out');
             navigate('/login')
+            window.location.reload();
         }).catch((error) => {
             console.log(error);
 
@@ -20,27 +23,35 @@ export default function NavBar() {
             <li>
                 <Link to="/">Home</Link>
             </li>
-            <li>
+            {/* <li>
                 <Link to="/">Our Portfolio</Link>
-            </li>
+            </li> */}
             <li>
-                <Link to="/">Our Team</Link>
+                <Link to="/teams">Our Team</Link>
             </li>
-            <li>
+            {/* <li>
                 <Link to="/addServices">Add Services</Link>
-            </li>
+            </li> */}
             {
-                user ? <li> <button onClick={handleLogout} className=''>Log Out</button></li> :
+                user ? <li> <button onClick={handleLogout} className=''>Log Out </button></li> :
                     <li>
                         <Link to="/login">
-                            <button className=''>Login</button></Link>
+                            <button className=''>Login</button>
+                        </Link>
                     </li>
+            }
+            {
+                dbUser?.role === "admin" ? <li>
+                    <Link to="/dashboard/orderLists">Admin</Link>
+                </li> : <li>
+                    <Link to="/dashboard">{dbUser.name}</Link>
+                </li>
             }
 
         </>
     )
     return (
-        <div className="navbar bg-[#FFF8F5] md:px-20 py-4">
+        <div className="navbar bg-[#FFF8F5] md:px-20 py-2">
             <div className="navbar-start ">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

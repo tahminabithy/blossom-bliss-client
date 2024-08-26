@@ -8,6 +8,8 @@ export default function useServices() {
         queryKey: ['services'],
         queryFn: async () => {
             const res = await axiosPublic.get('/services');
+            // console.log(res.data);
+
             return res.data;
         }
     })

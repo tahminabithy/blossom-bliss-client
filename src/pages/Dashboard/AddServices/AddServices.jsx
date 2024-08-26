@@ -1,7 +1,7 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
 import { useForm } from "react-hook-form"
-import CommonBtn from '../../../components/CommonBtn/CommonBtn'
+
 import useAxiosPublic from '../../../hooks/useAxiosPublic'
 import axios from 'axios'
 import Swal from 'sweetalert2'
@@ -61,7 +61,10 @@ export default function AddServices() {
             <Helmet>
                 <title>Blossom & Bliss | Add Services</title>
             </Helmet>
-            <div className='flex justify-center items-center p-4 md:p-12 shadow-xl'>
+            <h1 className='my-8 md:my-20 text-center text-4xl font-regular md:font-bold'><span className='text-[#F63E7B] md:font-bold'>Services</span> We Provide</h1>
+
+            <div className='flex justify-center items-center p-4 md:p-12'>
+
                 <form className='w-full md:w-96 ' onSubmit={handleSubmit(onSubmit)}>
                     <label htmlFor="" className='text-sm ml-2'>Sevice Title</label>
                     <input className='w-full input input-bordered  mt-2 mb-8' type="text" required placeholder='Enter Title' {...register("title")} />

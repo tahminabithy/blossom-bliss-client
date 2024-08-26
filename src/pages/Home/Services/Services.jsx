@@ -3,12 +3,14 @@ import logo1 from "../../../assets/icons/logo.png"
 import useServices from '../../../hooks/useServices'
 import ServiceCard from '../../../components/ServiceCard/ServiceCard';
 import CommonBtn from '../../../components/CommonBtn/CommonBtn';
+import { Link } from 'react-router-dom';
 
 
 export default function Services() {
     const [services] = useServices();
     console.log(services);
     const someService = services.slice(0, 3)
+    // ------------------------
 
     return (
         <section className='container mx-auto my-12 md:my-20 px-4 md:px-12'>
@@ -22,7 +24,9 @@ export default function Services() {
                 }
 
             </div>
-            <div className='flex justify-center mt-16'><CommonBtn title={"Explore More"} /></div>
+            <div className='flex justify-center mt-16'>
+                <Link to="/allServices"><CommonBtn title={"Explore More"} /></Link>
+            </div>
 
         </section>
     )

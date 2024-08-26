@@ -1,9 +1,10 @@
 import React from 'react'
 import CommonBtn from '../../../components/CommonBtn/CommonBtn'
 import bannerBg from "../../../assets/images/bannerBg.png"
+import { Link } from 'react-router-dom'
 export default function Banner() {
     return (
-        <section className='bg-[#FFF8F5] w-full'>
+        <section className='bg-[#FFF8F5] w-full py-2'>
             <div className='max-w-screen-2xl mx-auto px-4 md:px-8'>
                 <div className='grid cols-1 md:grid-cols-2 gap-8 '>
                     <div className='flex flex-col p-4'>
@@ -13,7 +14,8 @@ export default function Banner() {
 
                                 <br /> Come as you are, leave as the best version of yourself. Because you deserve it—every day, in every way.
                             </p>
-                            <CommonBtn title={"Get an Appointment"} />
+                            <Link to="/allServices"><CommonBtn title={"Get an Appointment"} /></Link>
+
                         </div>
 
                     </div>

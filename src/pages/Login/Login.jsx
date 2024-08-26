@@ -8,7 +8,7 @@ import GmailBtn from '../../components/GmailBtn/GmailBtn';
 
 export default function Login() {
     const navigate = useNavigate();
-    const { loginUser } = useContext(authContext);
+    const { setLoading, loginUser } = useContext(authContext);
     const { register, handleSubmit } = useForm()
     const onSubmit = (data) => {
         console.log(data);
@@ -16,6 +16,7 @@ export default function Login() {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
+                localStorage.setItem("user", user)
                 console.log("yes", user);
                 Swal.fire({
                     position: "top-end",
@@ -25,6 +26,7 @@ export default function Login() {
                     timer: 1000
                 });
                 navigate('/')
+                setLoading(false)
             })
             .catch((error) => {
                 const errorCode = error.code;

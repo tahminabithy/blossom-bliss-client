@@ -1,8 +1,10 @@
 import React, { createContext, useEffect, useState } from 'react'
 import { app } from '../../public/Firebase/firebase.config';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import useAxiosPublic from '../hooks/useAxiosPublic';
 
 export const authContext = createContext(null);
+const axiosPublic = useAxiosPublic();
 export default function AuthProvider({ children }) {
     const googleProvider = new GoogleAuthProvider();
     const [user, setUser] = useState(null)
@@ -39,6 +41,7 @@ export default function AuthProvider({ children }) {
             } else {
                 // User is signed out
                 // ...
+                setUser(null)
                 setLoading(false)
             }
         })
@@ -48,6 +51,7 @@ export default function AuthProvider({ children }) {
     const authInfo = {
         user,
         loading,
+        setLoading,
         registerUser,
         loginUser,
         logOut,
