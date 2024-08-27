@@ -23,7 +23,7 @@ export default function Dashboard() {
 
                 {/* Sidebar */}
                 <div
-                    className={` h-screen fixed inset-y-0 left-0 bg-gray-600 text-white w-72 transform z-[4] ${isOpen ? 'translate-x-0' : '-translate-x-full'
+                    className={`  fixed inset-y-0 left-0 bg-gray-600 text-white w-72 transform z-[4] ${isOpen ? 'translate-x-0' : '-translate-x-full'
                         } md:relative md:translate-x-0 transition-transform duration-200 ease-in-out`}
                 >
                     <div className="p-6 flex items-center justify-between">
@@ -53,7 +53,7 @@ export default function Dashboard() {
                             <NavLink to="/allServices"> <li className="p-2 text-[#F63E7B] hover:bg-gray-700 rounded list-none" >
                                 <FaCartArrowDown className="inline-block mr-2" />Book</li>
                             </NavLink>
-                            <NavLink to="/dashboard/orderLists"> <li className="p-2 text-[#F63E7B] hover:bg-gray-700 rounded list-none" >
+                            <NavLink to="/dashboard/bookingLists"> <li className="p-2 text-[#F63E7B] hover:bg-gray-700 rounded list-none" >
                                 <FaBagShopping className="inline-block mr-2" />Booking List</li>
                             </NavLink>
                             <NavLink to="/dashboard/addReviews">  <li className="p-2 text-[#F63E7B] hover:bg-gray-700 rounded list-none" >

@@ -57,11 +57,11 @@ export default function AddServices() {
 
     }
     return (
-        <div className=''>
+        <div className='py-12'>
             <Helmet>
                 <title>Blossom & Bliss | Add Services</title>
             </Helmet>
-            <h1 className='my-8 md:my-20 text-center text-4xl font-regular md:font-bold'><span className='text-[#F63E7B] md:font-bold'>Services</span> We Provide</h1>
+            <h1 className='py-8 md:py-16 text-center text-xl md:text-4xl font-regular md:font-bold'><span className='text-[#F63E7B] md:font-bold'>Add</span> Services</h1>
 
             <div className='flex justify-center items-center p-4 md:p-12'>
 

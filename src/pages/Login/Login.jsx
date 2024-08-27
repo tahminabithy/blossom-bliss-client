@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { authContext } from '../../context/AuthProvider'
 import Swal from 'sweetalert2';
 import GmailBtn from '../../components/GmailBtn/GmailBtn';
@@ -8,16 +8,16 @@ import GmailBtn from '../../components/GmailBtn/GmailBtn';
 
 export default function Login() {
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
     const { setLoading, loginUser } = useContext(authContext);
     const { register, handleSubmit } = useForm()
     const onSubmit = (data) => {
-        console.log(data);
         loginUser(data.email, data.password)
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
                 localStorage.setItem("user", user)
-                console.log("yes", user);
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -25,7 +25,7 @@ export default function Login() {
                     showConfirmButton: false,
                     timer: 1000
                 });
-                navigate('/')
+                navigate(from, { replace: true })
                 setLoading(false)
             })
             .catch((error) => {

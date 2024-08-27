@@ -42,7 +42,7 @@ export default function AddReview() {
             <Helmet>
                 <title>Dashboard | Review</title>
             </Helmet>
-            <h1 className='my-8  text-center text-2xl md:text-4xl font-regular md:font-bold'><span className='text-[#F63E7B] md:font-bold'>Services</span> We Provide</h1>
+            <h1 className='my-8  text-center text-2xl md:text-4xl font-regular md:font-bold'><span className='text-[#F63E7B] md:font-bold'>Add</span> Review</h1>
             <div className='flex justify-center items-center  px-6 py-8  md:py-16 mx-0 md:mx-56  border border-black'>
 
                 <form className='w-full md:w-96' onSubmit={handleSubmit(onSubmit)}>

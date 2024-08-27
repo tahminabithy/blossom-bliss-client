@@ -2,12 +2,14 @@ import React, { useContext } from 'react'
 import { FaGoogle } from 'react-icons/fa'
 import { authContext } from '../../context/AuthProvider'
 import useAxiosPublic from '../../hooks/useAxiosPublic'
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 export default function GmailBtn() {
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/"
     const { gmailLogin } = useContext(authContext)
     const handleGmailLogin = () => {
         gmailLogin().then((result) => {
@@ -19,11 +21,8 @@ export default function GmailBtn() {
                 // firstName: namesPart[0],
                 // lastName: namesPart[1]
             }
-            console.log(userInfo);
-
             if (user) {
                 axiosPublic.post('/user', userInfo).then(res => {
-                    console.log(res.data);
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
@@ -31,7 +30,7 @@ export default function GmailBtn() {
                         showConfirmButton: false,
                         timer: 1500
                     });
-                    navigate('/')
+                    navigate(from, { replace: true })
                 })
             }
 

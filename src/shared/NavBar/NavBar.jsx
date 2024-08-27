@@ -44,8 +44,8 @@ export default function NavBar() {
             {
                 dbUser?.role === "admin" ? <li>
                     <Link to="/dashboard/orderLists">Admin <FaUser /></Link>
-                </li> : <li>
-                    <Link to="/dashboard/orderLists">{dbUser.name} <FaUser /></Link>
+                </li> : <li className='text-pink-700 font-bold'>
+                    <Link to="/dashboard/bookingLists">{dbUser.name} <FaUser /></Link>
                 </li>
             }
 

@@ -8,11 +8,12 @@ import paypal from "../../assets/icons/pay-pal.png"
 import { useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import CommonBtn from '../../components/CommonBtn/CommonBtn';
+import useUser from '../../hooks/useUser';
 
 export default function BookingForm() {
     const { id } = useParams();
     const axiosPublic = useAxiosPublic();
-    const { user } = useContext(authContext)
+    const [user] = useUser();
     const { data: service = {}, isPending, refetch } = useQuery({
         queryKey: ['service', id],
         queryFn: async () => {
@@ -34,6 +35,8 @@ export default function BookingForm() {
 
     const onSubmit = async (data) => {
         data.title = service.title;
+        data.description = service.description;
+        data.price = service.price;
         console.log(data)
         const result = await axiosPublic.post('/bookings', data)
         console.log(result);
@@ -51,11 +54,15 @@ export default function BookingForm() {
 
     }
     return (
-        <div className=''>
-            <div className='flex justify-center items-center mt-16'>
-                <form className='px-10 md:px-28 py-6 md:py-10 shadow-lg bg-pink-200' onSubmit={handleSubmit(onSubmit)}>
+        <div className=' py-16'>
+            <h1 className='mb-4 md:mb-10  text-center text-2xl md:text-4xl font-regular md:font-bold'><span className='text-[#F63E7B] md:font-bold'>Book Your</span> Services</h1>
+            <div className='flex justify-center items-center'>
+
+
+                <form className='px-10 md:px-28 py-6 md:py-10 shadow-lg bg-gray-400 mx-4' onSubmit={handleSubmit(onSubmit)}>
+
                     {/* register your input into the hook by invoking the "register" function */}
-                    <input required type='text' className='w-full md:w-96  border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none ' defaultValue={user?.displayName} {...register("name")} />
+                    <input required type='text' className='w-full md:w-96  border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none ' defaultValue={user?.name} {...register("name")} />
                     <br />
                     <input requird type='email' className='w-full md:w-96 border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none ' defaultValue={user.email} {...register("email")} />
                     <br />

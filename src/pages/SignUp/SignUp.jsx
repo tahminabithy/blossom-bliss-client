@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import { useForm } from 'react-hook-form'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { authContext } from '../../context/AuthProvider'
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
@@ -9,6 +9,8 @@ import GmailBtn from '../../components/GmailBtn/GmailBtn';
 export default function SignUp() {
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location?.state?.from?.pathname || "/";
     const { registerUser } = useContext(authContext);
     const { register, handleSubmit, reset } = useForm()
     const onSubmit = (data) => {
@@ -24,15 +26,12 @@ export default function SignUp() {
         registerUser(data.email, data.password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
                 const userInfo = {
                     email: data.email,
                     name: data.firstName + ' ' + data.lastName,
-
                 }
                 if (user) {
                     axiosPublic.post('/user', userInfo).then(res => {
-                        console.log(res.data);
                         if (res.data.insertedId) {
                             Swal.fire({
                                 position: "top-end",
@@ -41,7 +40,7 @@ export default function SignUp() {
                                 showConfirmButton: false,
                                 timer: 1500
                             });
-                            navigate('/')
+                            navigate(from, { replace: true })
                             window.location.reload();
                         }
 

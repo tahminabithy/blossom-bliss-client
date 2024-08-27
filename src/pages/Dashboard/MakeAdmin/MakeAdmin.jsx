@@ -20,9 +20,9 @@ export default function MakeAdmin() {
         console.log("yes", res);
     }
     return (
-        <div>
-            <h1 className='my-8 md:my-20 text-center text-4xl font-regular md:font-bold'>Make<span className='text-[#F63E7B] md:font-bold ml-4'>Admin</span></h1>
-            <form onSubmit={handleSubmit(onSubmit)}>
+        <div className='py-8'>
+            <h1 className='py-6 md:py-16 text-center text-xl md:text-4xl font-regular md:font-bold'>Make<span className='text-[#F63E7B] md:font-bold ml-4'>Admin</span></h1>
+            <form className='m-4' onSubmit={handleSubmit(onSubmit)}>
                 <div className='flex justify-center items-center'>
                     <div className='w-full md:w-96'>
                         <input {...register("email")} defaultValue={user?.email} type="email" placeholder="jon@gmail.com" className="input input-bordered w-full " />
