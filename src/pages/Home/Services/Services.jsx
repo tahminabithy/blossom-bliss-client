@@ -22,7 +22,6 @@ export default function Services() {
                         <ServiceCard key={index} service={service} />
                     ))
                 }
-
             </div>
             <div className='flex justify-center mt-16'>
                 <Link to="/allServices"><CommonBtn title={"Explore More"} /></Link>

@@ -3,6 +3,7 @@ import Banner from './Banner/Banner'
 import Services from './Services/Services'
 import { Helmet } from 'react-helmet'
 import Featured from './Featured/Featured'
+import Testimonial from './Testimonial/Testimonial'
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
             <Banner />
             <Services />
             <Featured />
+            <Testimonial />
         </div>
     )
 }

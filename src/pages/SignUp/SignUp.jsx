@@ -42,6 +42,7 @@ export default function SignUp() {
                                 timer: 1500
                             });
                             navigate('/')
+                            window.location.reload();
                         }
 
                     })

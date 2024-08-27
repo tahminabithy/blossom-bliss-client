@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import CommonBtn from '../../components/CommonBtn/CommonBtn'
 import { authContext } from '../../context/AuthProvider'
 import useUser from '../../hooks/useUser'
+import { FaUser } from 'react-icons/fa6'
 export default function NavBar() {
     const { user, logOut } = useContext(authContext);
     const [dbUser] = useUser();
@@ -42,9 +43,9 @@ export default function NavBar() {
             }
             {
                 dbUser?.role === "admin" ? <li>
-                    <Link to="/dashboard/orderLists">Admin</Link>
+                    <Link to="/dashboard/orderLists">Admin <FaUser /></Link>
                 </li> : <li>
-                    <Link to="/dashboard">{dbUser.name}</Link>
+                    <Link to="/dashboard/orderLists">{dbUser.name} <FaUser /></Link>
                 </li>
             }
 
@@ -70,7 +71,7 @@ export default function NavBar() {
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-lg dropdown-content bg-[#F63E7B] z-[1] mt-3 w-60 p-2 shadow">
+                        className="menu menu-lg dropdown-content bg-white text-[#F63E7B] z-[1] mt-3 w-60 p-2 shadow">
                         {navOptions}
                     </ul>
                 </div>
