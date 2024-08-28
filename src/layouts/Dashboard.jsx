@@ -11,8 +11,8 @@ export default function Dashboard() {
         setIsOpen(!isOpen);
     };
     return (
-        <div>
-            <div className="md:flex relative ">
+        <div className='' >
+            <div className="md:flex relative">
                 {/* Toggle button for mobile view */}
                 <button
                     className="p-4 absolute top-0 left-0  md:hidden text-gray-500 focus:outline-none"
@@ -23,7 +23,7 @@ export default function Dashboard() {
 
                 {/* Sidebar */}
                 <div
-                    className={`  fixed inset-y-0 left-0 bg-gray-600 text-white w-72 transform z-[4] ${isOpen ? 'translate-x-0' : '-translate-x-full'
+                    className={` min-h-screen fixed inset-y-0 left-0 bg-gray-600 text-white w-72 transform z-[4] ${isOpen ? 'translate-x-0' : '-translate-x-full'
                         } md:relative md:translate-x-0 transition-transform duration-200 ease-in-out`}
                 >
                     <div className="p-6 flex items-center justify-between">

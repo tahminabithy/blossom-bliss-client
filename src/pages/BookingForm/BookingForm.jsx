@@ -37,6 +37,7 @@ export default function BookingForm() {
         data.title = service.title;
         data.description = service.description;
         data.price = service.price;
+        data.status = "Pending"
         console.log(data)
         const result = await axiosPublic.post('/bookings', data)
         console.log(result);

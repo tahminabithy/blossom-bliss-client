@@ -61,7 +61,7 @@ export default function AddServices() {
             <Helmet>
                 <title>Blossom & Bliss | Add Services</title>
             </Helmet>
-            <h1 className='py-8 md:py-16 text-center text-xl md:text-4xl font-regular md:font-bold'><span className='text-[#F63E7B] md:font-bold'>Add</span> Services</h1>
+            <h1 className='pt-8 md:pt-16 text-center text-xl md:text-4xl font-regular md:font-bold'><span className='text-[#F63E7B] md:font-bold'>Add</span> Services</h1>
 
             <div className='flex justify-center items-center p-4 md:p-12'>
 
@@ -82,7 +82,7 @@ export default function AddServices() {
                     <input {...register("image")} type="file" className="file-input file-input-bordered bg-[#FFEAF3] mt-2 w-full" />
                     {errors.exampleRequired && <span>This field is required</span>}
                     <div className='flex justify-end mt-6'>
-                        <button type='submit' className=' bg-[#F63E7B] text-white px-6 py-2 rounded-md hover:bg-[#FFEAF3] hover:text-black'>Submit</button>
+                        <button type='submit' className='mt-2 bg-[#F63E7B] text-white px-6 py-2 rounded-md hover:bg-[#FFEAF3] hover:text-black'>Submit</button>
                     </div>
 
 
