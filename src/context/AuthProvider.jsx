@@ -10,7 +10,7 @@ export default function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
     const auth = getAuth(app);
-
+    const axiosPublic = useAxiosPublic();
 
     const registerUser = (email, password) => {
         setLoading(true);
@@ -35,7 +35,14 @@ export default function AuthProvider({ children }) {
             if (user) {
                 setLoading(true)
                 const uid = user.uid;
+                const userInfo = {
+                    email: user.email
+                }
+                axiosPublic.post('/jwt', userInfo).then(res => {
+                    localStorage.setItem("access_token", res.data.token)
+                })
                 setUser(user)
+                localStorage.removeItem('access_token')
                 setLoading(false)
                 // ...
             } else {

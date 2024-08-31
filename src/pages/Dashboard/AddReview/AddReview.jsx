@@ -13,16 +13,14 @@ export default function AddReview() {
     const handleRatingChange = (value) => {
         setRating(value);
         // You can add additional logic here, like sending the rating to a server or storing it in state
-        console.log(value);
+
 
     };
 
     const { register, handleSubmit, reset } = useForm()
     const onSubmit = async (data) => {
         data.rating = rating;
-        console.log(data);
         const res = await axiosPublic.post('/reviews', data)
-        console.log(res.data);
         if (res.data.insertedId) {
             Swal.fire({
                 position: "top-end",

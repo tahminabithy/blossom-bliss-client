@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 
 export default function Services() {
     const [services] = useServices();
-    console.log(services);
     const someService = services.slice(0, 3)
     // ------------------------
 

@@ -5,10 +5,12 @@ import { useForm } from "react-hook-form"
 import useAxiosPublic from '../../../hooks/useAxiosPublic'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import useAxiosSecure from '../../../hooks/useAxiosSecure'
 export default function AddServices() {
     const axiosPublic = useAxiosPublic();
+    const axiosSecure = useAxiosSecure();
     const imgKey = import.meta.env.VITE_IMAGE_API_KEY
-    console.log(imgKey);
+
 
     const imgHostingApi = `https://api.imgbb.com/1/upload?key=${imgKey}`
     const {
@@ -19,7 +21,6 @@ export default function AddServices() {
     } = useForm()
 
     const onSubmit = async (data) => {
-        console.log(data.image[0])
         const imageFile = { image: data.image[0] }
         const res = await axiosPublic.post(imgHostingApi, imageFile, {
             headers: {
@@ -28,7 +29,7 @@ export default function AddServices() {
         })
 
         if (res.data) {
-            console.log('yes');
+
 
             const serviceData = {
                 title: data.title,
@@ -36,10 +37,9 @@ export default function AddServices() {
                 image: res?.data.data.display_url,
                 description: data.description
             }
-            console.log(serviceData);
-            console.log(axiosPublic);
-            const result = await axiosPublic.post('/services', serviceData);
-            console.log(result.data);
+
+
+            const result = await axiosSecure.post('/services', serviceData);
             if (result.data.insertedId) {
                 Swal.fire({
                     position: "top-end",

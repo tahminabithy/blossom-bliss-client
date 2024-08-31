@@ -10,7 +10,7 @@ export default function Featured() {
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-32'>
                     <img src={image} alt="" />
                     <div>
-                        <p className='text-3xl leading-loose md:text-4xl font-semibold md:leading-relaxed'>Let us pamper you with our  <br />
+                        <p className='text-3xl leading-loose md:text-4xl font-semibold md:leading-relaxed'>Let us pamper with <br />
                             <span className='text-[#F63E7B] font-semibold'> professional care.</span>
                         </p>
                         <p className='tracking-wide leading-8 font-light mt-4 text-wrap'>Transform your look with our expert beauty services, tailored just for you. Discover a new level of care and attention that brings out your

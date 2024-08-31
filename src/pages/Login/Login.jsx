@@ -43,10 +43,10 @@ export default function Login() {
                 <div className='border border-gray-400 p-10 md:p-16'>
                     <h1 className='text-xl font-semibold'>Login</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <input type='email' placeholder='Email' className='w-full md:w-96 border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none '  {...register("email")} />
+                        <input required type='email' placeholder='Email' className='w-full md:w-96 border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none '  {...register("email")} />
                         <br />
 
-                        <input type='password' placeholder='password' className='border-b-2 border-gray-500 my-2 w-full md:w-96 py-4 px-2 focus:outline-none' {...register("password")} />
+                        <input required type='password' placeholder='password' className='border-b-2 border-gray-500 my-2 w-full md:w-96 py-4 px-2 focus:outline-none' {...register("password")} />
                         <div className='flex justify-center items-center mt-6 '>
                             <button type='submit' className='w-full md:w-96 bg-[#F63E7B] text-white px-6 py-2 rounded-md hover:bg-[#FFEAF3] hover:text-black'>Login</button>
                         </div>

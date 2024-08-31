@@ -10,7 +10,6 @@ export default function Testimonial() {
     const topReviews = reviews.slice(0, 3);
     useEffect(() => {
         fetch('http://localhost:3002/reviews').then(res => res.json()).then((data) => {
-            console.log(data);
             setReviews(data)
         })
     }, [])
