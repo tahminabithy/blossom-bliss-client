@@ -5,7 +5,7 @@ import useAxiosPublic from '../../hooks/useAxiosPublic';
 import { authContext } from '../../context/AuthProvider';
 import credit from "../../assets/icons/credit-card.png"
 import paypal from "../../assets/icons/pay-pal.png"
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import CommonBtn from '../../components/CommonBtn/CommonBtn';
 import useUser from '../../hooks/useUser';
@@ -13,6 +13,7 @@ import useUser from '../../hooks/useUser';
 export default function BookingForm() {
     const { id } = useParams();
     const axiosPublic = useAxiosPublic();
+    const navigate = useNavigate();
     const [user] = useUser();
     const { data: service = {}, isPending, refetch } = useQuery({
         queryKey: ['service', id],
@@ -50,6 +51,7 @@ export default function BookingForm() {
                 timer: 1500
             });
             reset();
+            navigate('/dashboard/bookingLists')
         }
 
 
@@ -78,18 +80,12 @@ export default function BookingForm() {
                         <span className='mx-2'>Paypal</span>
                         <img className='w-8 h-8' src={paypal} alt="" />
                     </div>
-                    <input type='text' className='w-full md:w-96 border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none ' placeholder='card number' defaultValue="" {...register("cardNumber")} />
 
-                    <div className='flex justify-between items-center gap-6 w-full md:w-96'>
-                        <input type='text' className='w-full  border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none ' placeholder='Expired date' defaultValue="" {...register("expired_date")} />
-                        <input type='text' className='w-full  border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none ' placeholder='cvc' defaultValue="" {...register("cvc")} />
-
-                    </div>
                     {errors.exampleRequired && <span>This field is required</span>}
                     <br />
                     <p>Service charge will be ${service.price}</p>
                     <div className='flex justify-end mt-6'>
-                        <CommonBtn type='submit' title={'Pay'} />
+                        <CommonBtn type='submit' title={'Book'} />
                     </div>
                 </form>
             </div>
@@ -97,3 +93,6 @@ export default function BookingForm() {
         </div>
     )
 }
+
+
+

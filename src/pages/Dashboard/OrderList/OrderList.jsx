@@ -17,10 +17,7 @@ export default function OrderList() {
     })
     const handleStatus = (e, id) => {
         const status = e.target.value;
-        console.log(status, id);
         const data = { status: status }
-        console.log(data);
-
         axiosPublic.patch(`/booking/${id}`, data).then(res => {
             console.log(res);
             Swal.fire({

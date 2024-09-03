@@ -13,6 +13,8 @@ import UserBookingLists from "../pages/Dashboard/UserBookingLists/UserBookingLis
 import BookingForm from "../pages/BookingForm/BookingForm";
 import Teams from "../pages/Teams/Teams";
 import AddReview from "../pages/Dashboard/AddReview/AddReview";
+import Payment from "../pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 
 export const router = createBrowserRouter([
     {
@@ -73,7 +75,15 @@ export const router = createBrowserRouter([
             {
                 path: "bookingLists",
                 element: <UserBookingLists />
-            }
+            },
+            {
+                path: "payment",
+                element: <Payment />
+            },
+            {
+                path: "paymentHistory",
+                element: <PaymentHistory />
+            },
 
         ]
     }

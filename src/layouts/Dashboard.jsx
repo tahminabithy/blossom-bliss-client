@@ -1,6 +1,6 @@
 
-import React, { useContext, useState } from 'react';
-import { FaHome, FaUser, FaPlus, FaServicestack, FaHamburger, FaCross, FaCartArrowDown, FaStar } from 'react-icons/fa'
+import React, { useState } from 'react';
+import { FaHome, FaUser, FaPlus, FaServicestack, FaHamburger, FaCross, FaCartArrowDown, FaStar, FaHistory } from 'react-icons/fa'
 import { FaBagShopping, FaX } from 'react-icons/fa6';
 import { NavLink, Outlet } from 'react-router-dom';
 import useUser from '../hooks/useUser';
@@ -58,6 +58,9 @@ export default function Dashboard() {
                             </NavLink>
                             <NavLink to="/dashboard/addReviews">  <li className="p-2 text-[#F63E7B] hover:bg-gray-700 rounded list-none" >
                                 <FaStar className="inline-block mr-2" />Review</li>
+                            </NavLink>
+                            <NavLink to="/dashboard/paymentHistory">  <li className="p-2 text-[#F63E7B] hover:bg-gray-700 rounded list-none" >
+                                <FaHistory className="inline-block mr-2" />Payment History</li>
                             </NavLink>
                             {/* <NavLink> <li className="p-2 text-[#F63E7B] hover:bg-gray-700 rounded list-none" >
                                 <FaServicestack className="inline-block mr-2" />Manage Service</li>
