@@ -15,6 +15,8 @@ import Teams from "../pages/Teams/Teams";
 import AddReview from "../pages/Dashboard/AddReview/AddReview";
 import Payment from "../pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
+import NotFound from "../pages/NotFound/NotFound";
+import SimpleRoute from "./SimpleRoute";
 
 export const router = createBrowserRouter([
     {
@@ -43,6 +45,7 @@ export const router = createBrowserRouter([
                 path: "/teams",
                 element: <Teams />
             },
+
 
         ]
     },
@@ -86,5 +89,9 @@ export const router = createBrowserRouter([
             },
 
         ]
+    },
+    {
+        path: '*',
+        element: <NotFound />
     }
 ])

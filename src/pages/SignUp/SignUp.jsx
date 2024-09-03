@@ -29,6 +29,7 @@ export default function SignUp() {
                 const userInfo = {
                     email: data.email,
                     name: data.firstName + ' ' + data.lastName,
+                    role: "user",
                 }
                 if (user) {
                     axiosPublic.post('/user', userInfo).then(res => {

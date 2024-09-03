@@ -17,7 +17,8 @@ export default function GmailBtn() {
             // const namesPart = user?.displayName.split(" ")
             const userInfo = {
                 email: user.email,
-                name: user.displayName
+                name: user.displayName,
+                role: "user"
                 // firstName: namesPart[0],
                 // lastName: namesPart[1]
             }
