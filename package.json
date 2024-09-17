@@ -22,6 +22,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
     "react-hook-form": "^7.52.2",
     "react-icons": "^5.3.0",
     "react-rating": "^2.0.5",
@@ -43,5 +44,6 @@
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10",
     "vite": "^5.4.1"
-  }
+  },
+  "proxy": "https://blossom-bliss-server-site-rb3z5ndr4-tahminaakters-projects.vercel.app"
 }

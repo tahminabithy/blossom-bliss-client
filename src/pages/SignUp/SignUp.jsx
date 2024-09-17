@@ -5,6 +5,7 @@ import { authContext } from '../../context/AuthProvider'
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../../hooks/useAxiosPublic';
 import GmailBtn from '../../components/GmailBtn/GmailBtn';
+import { Helmet } from 'react-helmet';
 
 export default function SignUp() {
     const axiosPublic = useAxiosPublic();
@@ -70,7 +71,10 @@ export default function SignUp() {
     return (
         <div>
             {/* ---------form--------- */}
-            <div className='flex justify-center items-center my-12'>
+            <Helmet>
+                <title>Blossom & Bliss | Sign up</title>
+            </Helmet>
+            <div className='flex justify-center items-center my-12 lg:h-screen'>
                 <div className='border border-gray-400 p-10 md:p-16'>
                     <h1 className='text-xl font-semibold'>Create an account</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>

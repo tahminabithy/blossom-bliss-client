@@ -32,28 +32,27 @@ export default function AuthProvider({ children }) {
     }
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(user => {
+            setUser(user)
             if (user) {
-                setLoading(true)
+                console.log("auth user", user);
                 const uid = user.uid;
                 const userInfo = {
                     email: user.email
                 }
                 axiosPublic.post('/jwt', userInfo).then(res => {
                     localStorage.setItem("access_token", res.data.token)
+                    setLoading(false)
                 })
-                setUser(user)
-                localStorage.removeItem('access_token')
-                setLoading(false)
-                // ...
-            } else {
+            }
+            else {
                 // User is signed out
                 // ...
-                setUser(null)
+                localStorage.removeItem('access_token')
                 setLoading(false)
             }
         })
         return unsubscribe
-    }, [])
+    }, [axiosPublic])
 
     const authInfo = {
         user,

@@ -67,7 +67,7 @@ export default function BookingForm() {
                     {/* register your input into the hook by invoking the "register" function */}
                     <input required type='text' className='w-full md:w-96  border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none ' defaultValue={user?.name} {...register("name")} />
                     <br />
-                    <input requird type='email' className='w-full md:w-96 border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none ' defaultValue={user.email} {...register("email")} />
+                    <input requird type='email' className='w-full md:w-96 border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none ' defaultValue={user?.email} {...register("email")} />
                     <br />
                     <input required type='text' className='w-full md:w-96 border-b-2 border-gray-500 my-4 py-4 px-2 focus:outline-none ' placeholder='Service' defaultValue={service?.title} {...register("title")} />
                     <div className='flex  items-center mt-8'>

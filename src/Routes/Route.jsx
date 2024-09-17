@@ -69,7 +69,7 @@ export const router = createBrowserRouter([
             {
                 path: "bookingForm/:id",
                 element: <PrivateRoute><BookingForm /></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:3002/service/${params.id}`)
+                loader: ({ params }) => fetch(`https://blossom-bliss-server-site.vercel.app/service/${params.id}`)
             },
             {
                 path: "addReviews",

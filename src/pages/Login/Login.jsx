@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { authContext } from '../../context/AuthProvider'
 import Swal from 'sweetalert2';
 import GmailBtn from '../../components/GmailBtn/GmailBtn';
+import { Helmet } from 'react-helmet';
 
 
 export default function Login() {
@@ -39,7 +40,10 @@ export default function Login() {
     return (
         <div>
             {/* ---------form--------- */}
-            <div className='flex justify-center items-center my-12 md:my-20'>
+            <Helmet>
+                <title>Blossom & Bliss | Login</title>
+            </Helmet>
+            <div className='flex justify-center items-center m-4 my-10 md:my-12 lg:h-screen'>
                 <div className='border border-gray-400 p-10 md:p-16'>
                     <h1 className='text-xl font-semibold'>Login</h1>
                     <form onSubmit={handleSubmit(onSubmit)}>
