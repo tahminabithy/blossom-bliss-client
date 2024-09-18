@@ -29,7 +29,7 @@ To run the project locally,
    ```bash
     git clone https://github.com/your-username/bistro-boss.git
 
- 2.  npm install 
+
 
 
 
