@@ -1,10 +1,10 @@
-# Bistro Boss - Parlour Services Website
+# Blossom & Bliss - Parlour Services Website
 
-**Bistro Boss** is a modern, user-friendly website that provides an online platform for parlour services such as facials, waxing, and more. The site allows users to explore the available services, book appointments, and learn more about the parlour's offerings.
+**Blossom & Bliss** is a modern, user-friendly website that provides an online platform for parlour services such as facials, waxing, and more. The site allows users to explore the available services, book appointments, and learn more about the parlour's offerings.
 
 ## Live Demo
 
-Check out the live version of the site: [Bistro Boss Live Site](https://blossom-bliss-parlour.web.app/)
+Check out the live version of the site: [Blossom & Bliss Live Site](https://blossom-bliss-parlour.web.app/)
 
 ## Features
 
