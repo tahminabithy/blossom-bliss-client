@@ -25,9 +25,12 @@ Check out the live version of the site: [Bistro Boss Live Site](https://blossom-
 
 To run the project locally,
 
- Clone the repository:
+ 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/bistro-boss.git
+    git clone https://github.com/your-username/bistro-boss.git
+
+ 2.  npm install 
+
 
 
 
