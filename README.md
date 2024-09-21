@@ -2,7 +2,7 @@
 
 Blossom & Bliss is a web application designed for a beauty and wellness parlour. It allows customers to browse services, book appointments, and make online payments. The platform is built with modern technologies to ensure responsiveness, performance, and a seamless user experience.
 
-Live Site: https://blossom-bliss-parlour.web.app/
+Live Site: [Blossom & Bliss Parlour](https://blossom-bliss-parlour.web.app/)
 
 ## Table of Contents
 1. [Features](#features)
@@ -14,40 +14,40 @@ Live Site: https://blossom-bliss-parlour.web.app/
 
 ## Features
 
-- **Service Listing**: Users can view all available services like facials, waxing, and other beauty treatments.
-- **Responsive Design**: The app is designed to work across devices (mobile, tablet, and desktop).
-- **Authentication**: Secure login and registration through Firebase Authentication.
-- **Appointment Booking**: Users can book appointments for specific services.
-- **Payment Integration**: Online payments via an integrated Payment Gateway.
-- **Admin Panel**: Admins can add, update, or delete services and manage bookings.
-- **Real-time Updates**: Changes and updates in service availability and user bookings are reflected in real-time.
+- **Service Listing**: Users can view beauty treatments like facials, waxing, and more.
+- **Responsive Design**: Optimized for mobile, tablet, and desktop devices.
+- **Authentication**: Secure login via Firebase Authentication.
+- **Appointment Booking**: Schedule appointments directly from the platform.
+- **Payment Integration**: Make secure online payments.
+- **Admin Panel**: Admins can manage services and appointments.
+- **Real-time Updates**: Service and booking updates are instant.
 
 ## Tech Stack
 
 ### Frontend
 - **ReactJS**: For building the user interface.
-- **Vite**: For a faster development experience.
-- **Tailwind CSS**: For responsive and utility-first styling.
-- **Daisy UI**: UI components built on Tailwind CSS.
-- **Axios**: For handling HTTP requests.
+- **Vite**: For faster development.
+- **Tailwind CSS**: For styling.
+- **Daisy UI**: Tailwind UI components.
+- **Axios**: For handling API requests.
 - **Tanstack React Query**: For data fetching and caching.
 - **Swiper.js**: For responsive sliders.
-- **Firebase Authentication**: For managing user login and registration.
+- **Firebase Authentication**: For user login and registration.
 
 ### Backend
-- **Node.js**: Server-side logic and RESTful API.
-- **Express.js**: Lightweight web framework for Node.js.
-- **MongoDB**: NoSQL database to manage user bookings, services, and payments.
-- **JWT (JSON Web Tokens)**: For secure user authentication and authorization.
-- **Payment Gateway**: Integrated for secure online payments.
-  
+- **Node.js**: Server-side logic.
+- **Express.js**: Lightweight web framework.
+- **MongoDB**: NoSQL database for booking and service management.
+- **JWT**: For secure user authentication.
+- **Payment Gateway**: Stripe integration for payments.
+
 ### Deployment
-- **Frontend**: Hosted on Firebase.
-- **Backend**: Deployed using Vercel.
+- **Frontend**: Deployed on Firebase.
+- **Backend**: Deployed on Vercel.
 
 ## Installation
 
-To run this project locally, follow these steps:
+To run the project locally, follow these steps:
 
 1. **Clone the repository**:
    ```bash
@@ -56,17 +56,27 @@ To run this project locally, follow these steps:
    ```
 
 2. **Install dependencies**:
-   Ensure you have Node.js installed. Run the following command to install the required packages:
+   Ensure you have Node.js installed. Run:
    ```bash
    npm install
    ```
 
 3. **Environment Variables**:
-   Create a `.env` file at the root of the project and add your Firebase and backend API keys:
+   Create a `.env` file at the project root with the following keys:
    ```bash
-   REACT_APP_API_URL=<your-backend-api-url>
-   REACT_APP_FIREBASE_API_KEY=<your-firebase-api-key>
-   REACT_APP_FIREBASE_AUTH_DOMAIN=<your-firebase-auth-domain>
+   VITE_FIREBASE_API_KEY=your-firebase-api-key
+   VITE_FIREBASE_AUTH_DOMAIN=your-firebase-auth-domain
+   VITE_FIREBASE_PROJECT_ID=your-firebase-project-id
+   VITE_FIREBASE_STORAGE_BUCKET=your-firebase-storage-bucket
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your-firebase-messaging-sender-id
+   VITE_FIREBASE_APP_ID=your-firebase-app-id
+
+   VITE_IMAGE_API_KEY=your-image-api-key
+   VITE_EMAILJS_SERVICE_ID=your-emailjs-service-id
+   VITE_EMAILJS_TEMPLATE_ID=your-emailjs-template-id
+   VITE_EMAILJS_USER_ID=your-emailjs-user-id
+
+   VITE_STRIPE_PUBLIC_TEST_KEY=your-stripe-public-test-key
    ```
 
 4. **Start the development server**:
@@ -75,7 +85,6 @@ To run this project locally, follow these steps:
    ```
 
 5. **Build for production**:
-   To create a production-ready build, run:
    ```bash
    npm run build
    ```
@@ -103,14 +112,14 @@ blossom-bliss-client/
 
 ## Usage
 
-1. **Booking a Service**: Users can select from a list of services and book appointments by specifying the date and time.
-2. **Admin Access**: Admins have access to manage services and appointments through a secure admin panel.
-3. **Payments**: Users can securely pay for their services online.
-4. **Authentication**: Users must log in via Firebase Authentication to access the booking and payment features.
+1. **Booking a Service**: Users can choose a service and schedule an appointment.
+2. **Admin Access**: Admins can log in to manage services and bookings.
+3. **Payments**: Users can pay for services online via Stripe.
+4. **Authentication**: Login is required for booking and payment features.
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute to this project:
+Contributions are welcome! If you'd like to contribute:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).
