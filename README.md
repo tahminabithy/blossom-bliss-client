@@ -2,6 +2,8 @@
 
 Blossom & Bliss is a web application designed for a beauty and wellness parlour. It allows customers to browse services, book appointments, and make online payments. The platform is built with modern technologies to ensure responsiveness, performance, and a seamless user experience.
 
+Live Site: https://blossom-bliss-parlour.web.app/
+
 ## Table of Contents
 1. [Features](#features)
 2. [Tech Stack](#tech-stack)
