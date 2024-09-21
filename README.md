@@ -96,13 +96,16 @@ blossom-bliss-client/
 │
 ├── public/               # Public assets like images, icons, and index.html
 ├── src/                  # Main source code
+│   ├── Routes/           # Application routes and navigation setup
 │   ├── assets/           # Images and other static files
+│   ├── context/          # Auth provider through React Context API
 │   ├── components/       # Reusable components (Navbars, Footers, etc.)
+│   ├── hooks/            # Custom hooks for shared logic
+│   ├── layouts/          # Layout components for different page structures
 │   ├── pages/            # Individual pages (Home, Booking, etc.)
-│   ├── services/         # API calls and service handling (Axios)
-│   ├── context/          # Global state and context
+│   ├── shared/           # Shared utilities or components used across pages
 │   ├── styles/           # Global styles and Tailwind configurations
-│   └── App.jsx           # Main App component
+│   └── main.jsx          # Entry point of the React application
 │
 ├── .env                  # Environment variables (not included in repo)
 ├── package.json          # Project dependencies and scripts
